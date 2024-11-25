@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triptide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="left">
+          <li>
+            <a>
+              <img src="src/logo.jpg" alt="Triptide Logo" class="logo" />
+              <span class="site-name">Triptide</span>
+            </a>
+          </li>
+          <li><a href="#home" data-target="home">Home</a></li>
+          <li>
+            <a href="#destinations" data-target="destinations">Destinations</a>
+          </li>
+          <li><a href="#booking" data-target="booking">Booking</a></li>
+          <li><a href="#about" data-target="about">About Us</a></li>
+          <li><a href="#about" data-target="about">Contact US</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="#login" id="loginButton">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <div class="home-content">
+          <h2>Welcome to <span class="site-name">Triptide</span></h2>
+          <p>Discover amazing places at exclusive deals!</p>
+        </div>
+      </section>
+
+      <section id="destinations">
+        <h1 class="destination_heading">Popular Destinations</h1>
+        <p class="quote">
+          "The world is a book and those who do not travel read only one page."
+        </p>
+        <div class="destination">
+          <img src="src/destination1.jpg" alt="Destination 1" />
+          <h3>Jammu and Kashmir</h3>
+          <p>Explore the beauty of Dal Lake - Srinagar</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination1">View</button>
+          </div>
+        </div>
+        <div class="destination">
+          <img src="src/destination2.jpg" alt="Destination 2" />
+          <h3>Uttarakhand</h3>
+          <p>Experience the adventure in River rafting, Rishikesh</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination2">View</button>
+          </div>
+        </div>
+        <div class="destination">
+          <img src="src/destination3.jpg" alt="Destination 3" />
+          <h3>Uttar Pradesh</h3>
+          <p>Discover the charm of Agra - City of Taj</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination3">View</button>
+          </div>
+        </div>
+        <div class="destination">
+          <img src="src/destination4.jpg" alt="Destination 4" />
+          <h3>Kerala</h3>
+          <p>Unwind at the serene Munnar</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination4">View</button>
+          </div>
+        </div>
+        <div class="destination">
+          <img src="src/destination5.jpg" alt="Destination 5" />
+          <h3>Goa</h3>
+          <p>Enjoy the vibrant nightlife and pristine beaches</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination5">View</button>
+          </div>
+        </div>
+        <div class="destination">
+          <img src="src/destination6.jpg" alt="Destination 6" />
+          <h3>Karnataka</h3>
+          <p>Explore the rich heritage and scenic landscapes</p>
+          <div class="buttons">
+            <button class="view-button" data-id="destination6">View</button>
+          </div>
+        </div>
+        <!-- Remove duplicate destinations -->
+      </section>
+
+      <section id="booking" class="booking-section">
+        <div class="booking-form">
+          <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="rounded-input"
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="rounded-input"
+            />
+
+            <label for="count">Number of Person:</label>
+            <input
+              type="number"
+              id="count"
+              name="count"
+              required
+              class="rounded-input"
+              min="1"
+            />
+
+            <label for="Pickup">Pickup:</label>
+            <input
+              type="text"
+              id="Pickup"
+              name="Pickup"
+              required
+              class="rounded-input"
+            />
+
+            <label for="destination">Destination:</label>
+            <select
+              id="destination"
+              name="destination"
+              required
+              class="rounded-input"
+            >
+              <option value="">Select Destination</option>
+            </select>
+
+            <label for="transport">Mode of Transportation:</label>
+            <select
+              id="transport"
+              name="transport"
+              required
+              class="rounded-input"
+            >
+              <option value="">Select Transportation</option>
+              <option value="">Bus</option>
+              <option value="">Plane</option>
+              <option value="">Train</option>
+              <option value="">Ship</option>
+            </select>
+
+            <label for="transport">Mode of Stay:</label>
+            <select
+              id="transport"
+              name="transport"
+              required
+              class="rounded-input"
+            >
+              <option value="">Select Mode of Stay</option>
+              <option value="">Hotel</option>
+              <option value="">Home Stay</option>
+              <option value="">Tent</option>
+            </select>
+
+            <label for="start-date">Start Date:</label>
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              required
+              class="rounded-input"
+            />
+
+            <label for="end-date">End Date:</label>
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              required
+              class="rounded-input"
+            />
+
+            <button type="submit" class="rounded-input">Book Now</button>
+          </form>
+        </div>
+        <div class="destination-details">
+          <div id="destinationDetails">
+            <h2 id="destinationName"></h2>
+            <div id="spot1Details">
+              <h3 id="spot1Name"></h3>
+              <div id="spot1Images"></div>
+              <p id="spot1Description"></p>
+            </div>
+            <div id="spot2Details">
+              <h3 id="spot2Name"></h3>
+              <div id="spot2Images"></div>
+              <p id="spot2Description"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          Welcome to Triptide, your ultimate destination for discovering and
+          booking unforgettable travel experiences. At Triptide, we're
+          passionate about helping you explore the world and create memories
+          that last a lifetime.
+        </p>
+        <div id="about-container">
+          <div class="about-item">
+            <div class="about-box">
+              <h3>Our Mission</h3>
+              <p>
+                Our mission at Triptide is simple: to make travel planning easy,
+                enjoyable, and accessible to everyone. We strive to provide a
+                seamless booking experience, curated destination
+                recommendations, and exceptional customer service every step of
+                the way.
+              </p>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-box">
+              <h3>Our Vision</h3>
+              <p>
+                Our vision is to inspire and empower travelers to embark on
+                meaningful journeys that enrich their lives and broaden their
+                horizons. We envision a world where travel fosters connection,
+                understanding, and personal growth.
+              </p>
+            </div>
+          </div>
+          <!-- Add more about-items as needed -->
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>
+                    <strong>Address:</strong> 1234 Street Name, City, State, Zip Code
+                </p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> contact@triptide.com</p>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+    
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required />
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    </main>
+
+    <!-- Modal Popup -->
+    <div id="destinationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="profile-section">
+          <img id="profile-pic" src="" alt="Profile Picture" />
+          <h2 id="destination-name"></h2>
+          <p
+            id="tour-plan-amount"
+            style="text-align: left; margin-top: 5px"
+          ></p>
+        </div>
+        <div id="spot1">
+          <h3 id="spot1-name"></h3>
+          <p id="spot1-description"></p>
+          <div id="spot1-images"></div>
+        </div>
+        <div id="spot2">
+          <h3 id="spot2-name"></h3>
+          <p id="spot2-description"></p>
+          <div id="spot2-images"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div id="loginForm">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit" id="loginButton1">Login</button>
+          </form>
+          <p>
+            Don't have an account?
+            <a href="#" onclick="openSignUpPopup()">Create new account</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Popup -->
+    <div id="signupPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div id="signupForm">
+          <h2>Create Account</h2>
+          <form id="signupForm">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required />
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" required />
+            <label for="newPassword">Password:</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              required
+            />
+            <label for="confirmPassword">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+            <button type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Popup -->
+    <!-- Payment Popup -->
+    <div id="paymentPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" id="paymentPopupClose">&times;</span>
+        <div class="payment-form">
+          <h3>Payment Information</h3>
+          <p>Tour Payment Amount: <span id="tourPaymentAmount"></span></p>
+          <form id="paymentForm">
+            <label for="cardName">Name on Card</label>
+            <input type="text" id="cardName" required />
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" required />
+            <label for="expDate">Expiration Date</label>
+            <input type="text" id="expDate" required />
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" required />
+            <button type="submit">Pay</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Embedded JSON data
+      var destinationsData = [
+        {
+          id: "destination1",
+          name: "Jammu and Kashmir",
+          description: "Explore the beauty of Dal Lake - Srinagar",
+          images: ["src/destination1.jpg"],
+          spot1: "Dal Lake",
+          description1:
+            "Dal is a lake in Srinagar, the summer capital of the Indian-administered Jammu and Kashmir in the disputed Kashmir region. It is an urban lake, the second largest lake in Jammu and Kashmir, and the most visited place in Srinagar by tourists and locals. It is integral to tourism and recreation in the Kashmir valley and is variously known as the Lake of Flowers, Jewel in the crown of Kashmir or Srinagar's Jewel. The lake is also an important source for commercial operations in fishing and water plant harvesting.",
+          images1: [
+            "src/destination1_spot1_img1.jpg",
+            "src/destination1_spot1_img2.jpg",
+          ],
+          spot2: "Gulmarg",
+          description2:
+            "Gulmarg is the heartland of winter sports in India and was rated as Asia's seventh best ski destination. The town is accessible from Srinagar by road via Tangmarg. The road climbs uphill in the last 12 kilometres to Gulmarg passing through forests of pine and fir. Winter sports like skiing, tobogganing, snowboarding and heli-skiing take place on the slopes of Mount Apharwat reachable by a Gondola lift.",
+          images2: [
+            "src/destination1_spot2_img1.jpg",
+            "src/destination1_spot2_img2.jpg",
+          ],
+          amount: 50000,
+        },
+        {
+          id: "destination2",
+          name: "Uttarakhand",
+          description: "Experience the adventure in River rafting, Rishikesh",
+          images: ["src/destination2.jpg"],
+          spot1: "Rishikesh",
+          description1:
+            "Rishikesh, also spelt as Hrishikesh, is a city near Dehradun in Dehradun district of the Indian state Uttarakhand. It is situated on the right bank of the Ganges River and is a pilgrimage town for Hindus, with ancient sages and saints meditating there in search of higher knowledge. There are numerous temples and ashrams built along the banks of the river.",
+          images1: [
+            "src/destination2_spot1_img1.jpg",
+            "src/destination2_spot1_img2.jpg",
+          ],
+          spot2: "Mussoorie",
+          description2:
+            "Mussoorie is at an average altitude of 2,005 metres (6,578 ft). To the northeast are the Himalayan snow ranges, and to the south, the Doon Valley and Shiwalik ranges. The second highest point is the original Lal Tibba in Landour, with a height of over 2,275 m (7,464 ft). Mussoorie is popularly known as The Queen of the Hills.",
+          images2: [
+            "src/destination2_spot2_img1.jpg",
+            "src/destination2_spot2_img2.jpg",
+          ],
+          amount: 40000,
+        },
+        {
+          id: "destination3",
+          name: "Uttar Pradesh",
+          description: "Discover the charm of Agra - City of Taj",
+          images: ["src/destination3.jpg"],
+          spot1: "Taj Mahal",
+          description1:
+            "The Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being the jewel of Islamic art in India and one of the universally admired masterpieces of the world's heritage. It is regarded as one of the best examples of Mughal architecture and a symbol of Indian history. The Taj Mahal is a major tourist attraction and attracts more than five million visitors a year. In 2007, it was declared a winner of the New 7 Wonders of the World initiative.",
+          images1: [
+            "src/destination3_spot1_img1.jpg",
+            "src/destination3_spot1_img2.jpg",
+          ],
+          spot2: "Varanasi",
+          description2:
+            "Varanasi, also known as Kashi, is a city in the northern Indian state of Uttar Pradesh. It is regarded as the spiritual capital of India, and is one of the oldest continuously inhabited cities in the world, dating back to the 11th century BC. The city is a major pilgrimage destination for Hindus, who believe that bathing in the Ganges River here washes away sins and helps attain moksha, or liberation from the cycle of rebirth.",
+          images2: [
+            "src/destination3_spot2_img1.jpg",
+            "src/destination3_spot2_img2.jpg",
+          ],
+          amount: 30000,
+        },
+        {
+          id: "destination4",
+          name: "Kerala",
+          description: "Unwind at the serene Munnar",
+          images: ["src/destination4.jpg"],
+          spot1: "Munnar",
+          description1:
+            "Munnar is a beautiful hill station located in the Idukki district of Kerala, India. It is situated at around 1,600 metres (5,200 ft) above mean sea level, in the Western Ghats mountain range. Munnar is called the Kashmir of South India due to its cool climate and scenic beauty. It is a popular tourist destination known for its sprawling tea plantations, lush green hills, and misty mountains.",
+          images1: [
+            "src/destination4_spot1_img1.jpg",
+            "src/destination4_spot1_img2.jpg",
+          ],
+          spot2: "Alleppey",
+          description2:
+            "Alappuzha is a prominent tourist destination in Kerala. The town is famous for its waterways and backwaters, and has been described as the Venice of the East for the small canals winding through its historic centre. It plays a role as one of the primary access points for the annual Nehru Trophy Boat Race during the festival of Onam. Alappuzha is also a hub for coir manufacturing, and has a thriving coir industry.",
+          images2: [
+            "src/destination4_spot2_img1.jpg",
+            "src/destination4_spot2_img2.jpg",
+          ],
+          amount: 45000,
+        },
+        {
+          id: "destination5",
+          name: "Goa",
+          description: "Enjoy the vibrant nightlife and pristine beaches",
+          images: ["src/destination5.jpg"],
+          spot1: "Baga Beach",
+          description1:
+            "Baga Beach is one of the most popular beaches in Goa. It is known for its lively nightlife, shacks, and a wide range of water sports activities like parasailing, jet skiing, and windsurfing. The beach is a perfect spot for tourists looking to enjoy the vibrant atmosphere and beautiful sunsets.",
+          images1: [
+            "src/destination5_spot1_img1.jpg",
+            "src/destination5_spot1_img2.jpg",
+          ],
+          spot2: "Dudhsagar Falls",
+          description2:
+            "Dudhsagar Falls is a four-tiered waterfall located on the Mandovi River in the Indian state of Goa. It is one of the tallest waterfalls in India with a height of 310 meters (1017 feet) and an average width of 30 meters (100 feet). The falls are a popular tourist attraction and can be reached by trekking through lush forests or by taking a jeep safari.",
+          images2: [
+            "src/destination5_spot2_img1.jpg",
+            "src/destination5_spot2_img2.jpg",
+          ],
+          amount: 55000,
+        },
+        {
+          id: "destination6",
+          name: "Karnataka",
+          description: "Explore the rich heritage and scenic landscapes",
+          images: ["src/destination6.jpg"],
+          spot1: "Hampi",
+          description1:
+            "Hampi is an ancient village in the south Indian state of Karnataka. It is famous for its ruins, belonging to the Vijayanagara Empire. Hampi is a UNESCO World Heritage Site and is renowned for its temples, royal complexes, and vast array of historical structures set amidst a rugged landscape.",
+          images1: [
+            "src/destination6_spot1_img1.jpg",
+            "src/destination6_spot1_img2.jpg",
+          ],
+          spot2: "Coorg",
+          description2:
+            "Coorg, also known as Kodagu, is a rural district in the southwest Indian state of Karnataka. It is known for its coffee plantations, lush forests, and scenic beauty. Coorg offers a peaceful retreat with its cool climate, beautiful landscapes, and outdoor activities like trekking, bird-watching, and river rafting.",
+          images2: [
+            "src/destination6_spot2_img1.jpg",
+            "src/destination6_spot2_img2.jpg",
+          ],
+          amount: 35000,
+        },
+      ];
+
+      console.log(destinationsData);
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
